@@ -33,13 +33,8 @@ src/
   modeling.py           # Modeling utilities for delivery delay, review score, binary satisfaction, CLV
   utils.py              # Paths, seeding, save functions
   dashboard.py          # Plotly Dash interactive dashboard
-outputs/
-  enriched_orders.csv   # Final feature-rich dataset
-  top10_categories_revenue.csv
-  top10_sellers_revenue.csv
 requirements.txt       # Python dependencies
 ```
-
 
 ---
 
