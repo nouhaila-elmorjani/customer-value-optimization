@@ -127,8 +127,7 @@ Interactive **Plotly Dash** dashboard allows business users to explore:
 **Screenshots / Key Figures:**
 
 **CLV Regression (Top 5% Customers)**
-<!-- Uploading "clv_actual_vs_predicted.png"... -->
-![alt text](image.png)
+<img width="960" height="720" alt="Image" src="https://github.com/user-attachments/assets/ef4f7332-4097-4692-9f79-602ce939d8b3" />
 
 **Top Product Categories by Revenue**
 ![Top Categories](figures/top_categories_revenue.png)
