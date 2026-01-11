@@ -1,4 +1,4 @@
-"""Utility functions and project-wide configuration for the Olist DS project."""
+"""Utility functions and project-wide configuration ."""
 
 from pathlib import Path
 import os
@@ -23,9 +23,6 @@ for _dir in (FIGURES_DIR, OUTPUTS_DIR):
 
 def set_global_seed(seed: int = RANDOM_SEED) -> None:
     """Set random seeds for reproducibility.
-
-    Business relevance: Ensures that model results are stable between runs,
-    which is essential for comparisons and auditing.
     """
 
     random.seed(seed)
@@ -36,10 +33,9 @@ def set_global_seed(seed: int = RANDOM_SEED) -> None:
 def save_figure(name: str) -> Path:
     """Save current matplotlib figure to the figures/ folder and return the path.
 
-    The file is saved as PNG with a standardized DPI for presentation use.
     """
 
-    import matplotlib.pyplot as plt  # local import to avoid hard dependency at import time
+    import matplotlib.pyplot as plt 
 
     FIGURES_DIR.mkdir(parents=True, exist_ok=True)
     filepath = FIGURES_DIR / f"{name}.png"
