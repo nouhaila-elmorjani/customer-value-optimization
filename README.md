@@ -1,10 +1,8 @@
 # Customer Retention & Lifetime Value Optimization
 
-**End-to-end e-commerce analytics: delivery, reviews, and customer lifetime value with actionable insights and interactive dashboard.**
-
 ---
 
-## Overview
+##  Project Overview
 
 This project analyzes Brazilian Olist e-commerce data to understand customer behavior, optimize retention strategies, and predict lifetime value (CLV). It provides an **end-to-end data science workflow**:
 
