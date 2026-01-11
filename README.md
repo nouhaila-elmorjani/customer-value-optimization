@@ -40,7 +40,6 @@ outputs/
 requirements.txt       # Python dependencies
 ```
 
-> Note: Figures are saved in `figures/` but optional for GitHub; key visuals are included below.
 
 ---
 
