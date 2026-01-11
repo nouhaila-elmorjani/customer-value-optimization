@@ -92,10 +92,6 @@ def _plot_threshold_curve(
     y_true, y_proba, model_name: str, pos_label: int = 1, thresholds=None
 ) -> None:
     """Plot precision, recall, and F1-score as a function of threshold.
-
-    This is primarily for diagnostics and portfolio-ready storytelling
-    around how threshold tuning trades off precision vs. recall for the
-    positive (dissatisfied) class.
     """
 
     import matplotlib.pyplot as plt
@@ -371,7 +367,7 @@ def train_review_models(
         "f1_weighted": report_gbc["weighted avg"]["f1-score"],
     }
 
-    # CatBoost Classifier (work on encoded data) – preferred when available
+    # CatBoost Classifier (work on encoded data) 
     if HAS_CATBOOST:
         X_all_encoded = preprocessor.fit_transform(X_all)
         X_train_enc, X_test_enc, y_train_enc, y_test_enc = train_test_split(
@@ -424,10 +420,6 @@ def train_binary_review_models(
     verbose: bool = False,
 ) -> pd.DataFrame:
     """Train binary customer satisfaction models on ``review_binary``.
-
-    Supports optional class balancing via ``use_class_weight`` to improve
-    recall for the minority (low-score) class when reviews are skewed
-    toward positive scores.
     """
     from sklearn.metrics import classification_report
 
@@ -439,7 +431,7 @@ def train_binary_review_models(
         X, y, test_size=0.2, random_state=42, stratify=y
     )
 
-    # Separate numeric and categorical features for proper preprocessing
+    # Separate numeric and categorical features for  preprocessing
     numeric_features = X.select_dtypes(include=[np.number]).columns.tolist()
     categorical_features = [col for col in X.columns if col not in numeric_features]
 
@@ -472,7 +464,7 @@ def train_binary_review_models(
 
     results = []
 
-    # 1) Gradient Boosting via sklearn Pipeline (works well with ColumnTransformer)
+    # 1) Gradient Boosting via sklearn Pipeline (ColumnTransformer)
     gb_model = GradientBoostingClassifier(
         n_estimators=300,
         max_depth=3,
@@ -530,7 +522,7 @@ def train_binary_review_models(
         "recall_at_best_threshold": best_thr_metrics_gb.get("recall") if best_thr_metrics_gb else None,
     })
 
-    # 2) CatBoost trained directly on preprocessed arrays (avoid sklearn Pipeline issues)
+    # 2) CatBoost trained directly on preprocessed arrays 
     if HAS_CATBOOST:
         X_train_enc = preprocessor.fit_transform(X_train)
         X_test_enc = preprocessor.transform(X_test)
