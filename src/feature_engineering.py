@@ -30,7 +30,6 @@ def add_binary_review_target(df: pd.DataFrame) -> pd.DataFrame:
     """
 
     df = df.copy()
-    # Prefer the engineered latest review score if present, otherwise fall back.
     score_col = "review_score_latest" if "review_score_latest" in df.columns else "review_score"
     df["review_binary"] = (df[score_col] >= 4).astype(int)
     return df
@@ -154,7 +153,7 @@ def add_geolocation_distance(
         how="left",
     ).rename(columns={"geo_lat": "seller_lat", "geo_lng": "seller_lng"})
 
-    # Attach customer_id to order_items_ext via orders so we can join to customer geography
+   
     order_items_with_customer = order_items_ext.merge(
         orders[["order_id", "customer_id"]],
         on="order_id",
