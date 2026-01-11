@@ -10,8 +10,6 @@ interactive views for business users:
 - Review score distribution and relationship with delivery delay
 - Optional simple delivery-delay "prediction" demo for a user-input order
 
-The goal is to keep this file self-contained and modular so it can be
-run independently from the notebook once the enriched CSV is created.
 """
 
 from pathlib import Path
@@ -54,7 +52,7 @@ def load_enriched_orders(path: Path = ENRICHED_PATH) -> pd.DataFrame:
 
     df = pd.read_csv(path, parse_dates=["order_purchase_timestamp"])
 
-    # Basic sanity clean-up
+    #  sanity clean-up
     if "delivery_delay_days" in df.columns:
         df["delivery_delay_days"] = df["delivery_delay_days"].fillna(0)
 
@@ -64,13 +62,13 @@ def load_enriched_orders(path: Path = ENRICHED_PATH) -> pd.DataFrame:
 def compute_top_entities(df: pd.DataFrame) -> Tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
     """Compute top categories, sellers, and customers for KPI views."""
 
-    # Top product categories by revenue: prefer pre-aggregated CSV if available
+    # Top product categories by revenue
     if TOP10_CATEGORIES_PATH.exists():
         cat_df = pd.read_csv(TOP10_CATEGORIES_PATH)
     else:
         cat_df = pd.DataFrame(columns=["product_category_name_english", "revenue"])
 
-    # Top sellers by revenue: prefer pre-aggregated CSV if available
+    # Top sellers by revenue
     if TOP10_SELLERS_PATH.exists():
         seller_df = pd.read_csv(TOP10_SELLERS_PATH)
     else:
@@ -85,7 +83,7 @@ def compute_top_entities(df: pd.DataFrame) -> Tuple[pd.DataFrame, pd.DataFrame, 
             .sort_values("customer_total_revenue", ascending=False)
             .head(15)
         )
-        # Create a short, presentation-friendly label for plotting
+        
         cust_df["customer_label"] = (
             "C" + (cust_df.reset_index().index + 1).astype(str).str.zfill(2)
         )
@@ -397,9 +395,9 @@ def main() -> None:
 
     df = load_enriched_orders()
     app = create_app(df)
-    # Dash 3.x: run_server is obsolete; use run()
+    
     app.run(debug=True)
 
 
-if __name__ == "__main__":  # pragma: no cover - manual run
+if __name__ == "__main__": 
     main()
