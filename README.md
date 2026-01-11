@@ -117,11 +117,7 @@ Interactive **Plotly Dash** dashboard allows business users to explore:
 * Delivery delay distributions and performance by state
 * High-value customers and CLV predictions
 
-**Key Figures:**
-
-**CLV Regression (Top 5% Customers)**
-
-<img width="960" height="720" alt="Image" src="https://github.com/user-attachments/assets/ef4f7332-4097-4692-9f79-602ce939d8b3" />
+**Key Figure:**
 
 **Top Product Categories by Revenue**
 
