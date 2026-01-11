@@ -24,7 +24,6 @@ This project analyzes Brazilian Olist e-commerce data to understand customer beh
 ## Project Structure
 
 ```
-data/                 # Raw Olist CSVs
 notebooks/
   olist_analysis.ipynb # Main analysis: EDA, feature engineering, modeling, KPIs, exports
 src/
@@ -127,12 +126,12 @@ Interactive **Plotly Dash** dashboard allows business users to explore:
 **Screenshots / Key Figures:**
 
 **CLV Regression (Top 5% Customers)**
+
 <img width="960" height="720" alt="Image" src="https://github.com/user-attachments/assets/ef4f7332-4097-4692-9f79-602ce939d8b3" />
 
 **Top Product Categories by Revenue**
-![Top Categories](figures/top_categories_revenue.png)
 
-![alt text](image-1.png)
+<img width="1500" height="900" alt="Image" src="https://github.com/user-attachments/assets/fde5a7b5-2b78-48ce-bb3a-99f7e940ff1e" />
 
 > To run locally:
 
@@ -162,7 +161,7 @@ source .venv/bin/activate  # Mac/Linux
 pip install -r requirements.txt
 ```
 
-4. Run `notebooks/olist_analysis.ipynb` (or all cells up to Section 7) to generate features, models, outputs.
+4. Run `notebooks/olist_analysis.ipynb`  to generate features, models, outputs.
 5. Figures (optional) and enriched datasets will be saved to `figures/` and `outputs/`.
 
 ---
