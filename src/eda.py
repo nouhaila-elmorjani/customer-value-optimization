@@ -161,7 +161,7 @@ def plot_delivery_and_correlations(orders_full: pd.DataFrame) -> None:
         save_figure("correlation_heatmap_key_features")
         plt.show()
 
-        # Optional: pairplot for a compact view of bivariate relationships
+        # pairplot for a compact view of bivariate relationships
         pairplot_sample = orders_full[num_cols].dropna().sample(
             min(2000, len(orders_full)), random_state=0
         )
