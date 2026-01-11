@@ -25,15 +25,15 @@ This project analyzes Brazilian Olist e-commerce data to understand customer beh
 
 ```
 notebooks/
-  olist_analysis.ipynb # Main analysis: EDA, feature engineering, modeling, KPIs, exports
+  olist_analysis.ipynb     # Main analysis: EDA, feature engineering, modeling, KPIs, exports
 src/
-  data_loading.py       # Load & clean raw tables
-  feature_engineering.py # Time, delivery, monetary, CLV, reviews, distance, interaction features
-  eda.py                # EDA plotting utilities
-  modeling.py           # Modeling utilities for delivery delay, review score, binary satisfaction, CLV
-  utils.py              # Paths, seeding, save functions
-  dashboard.py          # Plotly Dash interactive dashboard
-requirements.txt       # Python dependencies
+  data_loading.py          # Load & clean raw tables
+  feature_engineering.py   # Time, delivery, monetary, CLV, reviews, distance, interaction features
+  eda.py                   # EDA plotting utilities
+  modeling.py              # Modeling utilities for delivery delay, review score, binary satisfaction, CLV
+  utils.py                 # Paths, seeding, save functions
+  dashboard.py             # Plotly Dash interactive dashboard
+requirements.txt           # Python dependencies
 ```
 
 ---
