@@ -1,4 +1,4 @@
-"""Data loading and  cleaning for the Olist e-commerce dataset.
+"""Data loading and  cleaning.
 
 This module is responsible for reading raw CSVs from data/, standardizing
 core data types, handling basic missing values and duplicates, and
